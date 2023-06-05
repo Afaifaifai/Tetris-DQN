@@ -365,6 +365,7 @@ class Board:
         """
         if self.piece_last is not None:
             last_piece_coords = self.piece_last.get_shape_coords()
+            print(last_piece_coords)
             eroded_piece_cells = len(rows_cleared) * sum(y in rows_cleared for x, y in last_piece_coords)
             landing_height = 0 if self.piece_last is None else 1 + self.rows - max(y for x, y in last_piece_coords)
         else:
