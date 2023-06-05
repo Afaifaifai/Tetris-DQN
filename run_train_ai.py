@@ -1,12 +1,12 @@
 import gym
-import gym_tetris
+from gym_tetris.envs.tetris_env import TetrisEnv
 
 from statistics import mean, median
 from gym_tetris.ai.QNetwork import QNetwork
 
 
 def main():
-    env = gym.make("tetris-v1", action_mode=1)
+    env = TetrisEnv(action_mode=1)
     network = QNetwork()
     network.load()
 
@@ -35,3 +35,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
